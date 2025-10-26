@@ -14,22 +14,21 @@ Receiver::Receiver(uint8_t ch1Pin, uint8_t ch2Pin) {
 
 // Need to add debounce to make sure readings are stable, non blocking
 int16_t Receiver::getChannel1Value() {
-    // int pulseWidth = pulseIn(CH1_PIN, HIGH, 25000); // timeout after 25ms
-    // int16_t value = map(pulseWidth, 1000, 2000, -100, 100);
-    // //print value to serial monitor for debugging
+    int pulseWidth = pulseIn(CH1_PIN, HIGH); // timeout after 25ms
+    int16_t value = map(pulseWidth, 1010, 2000, -100, 100);
 
-    unsigned long highTime = pulseIn(CH1_PIN, HIGH);
-    unsigned long lowTime = pulseIn(CH1_PIN, LOW);
-    unsigned long cycleTime = highTime + lowTime;
-    float dutyCycle = (float)highTime / float(cycleTime);
+    // unsigned long highTime = pulseIn(CH1_PIN, HIGH);
+    // unsigned long lowTime = pulseIn(CH1_PIN, LOW);
+    // unsigned long cycleTime = highTime + lowTime;
+    // float dutyCycle = (float)highTime / float(cycleTime);
 
-    return dutyCycle;
-    
+    return value;
+
 }
 
 int16_t Receiver::getChannel2Value() {
-    int pulseWidth = pulseIn(CH2_PIN, HIGH, 25000); // timeout after 25ms
-    int16_t value = map(pulseWidth, 1000, 2000, -100, 100);
+    int pulseWidth = pulseIn(CH2_PIN, HIGH); // timeout after 25ms
+    int16_t value = map(pulseWidth, 960, 1990, -100, 100);
     return value;
 }
 

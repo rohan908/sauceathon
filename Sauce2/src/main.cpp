@@ -29,19 +29,67 @@ void loop() {
   song.stepSong(currentTime);
 
   hbridge.setMotor1(100, false);
+  
 
   // if(receiver.isUp()) {
-  //   digitalWrite(LED_BUILTIN, HIGH);
-  //   Serial.println("Up");
-  // } else {
-  //   digitalWrite(LED_BUILTIN, LOW);
+  //   Serial.print("Up ");
+  //   Serial.print(receiver.getChannel1Value());
+  //   Serial.print(" ");
+  //   Serial.println(receiver.getChannel2Value());
   // }
 
-  // print raw analog value of A1
-  unsigned long highTime = pulseIn(INFO_PIN, HIGH);
-    unsigned long lowTime = pulseIn(INFO_PIN, LOW);
-    unsigned long cycleTime = highTime + lowTime;
-    float dutyCycle = (float)highTime / float(cycleTime);
-  Serial.print("INFO_PIN:");
-  Serial.println(dutyCycle);
+  // if(receiver.isDiagonalUpRight()) {
+  //   Serial.print("Diagonal Up Right ");
+  //   Serial.print(receiver.getChannel1Value());
+  //   Serial.print(" ");
+  //   Serial.println(receiver.getChannel2Value());
+  // }
+
+  // if(receiver.isRight()) {
+  //   Serial.print("Right ");
+  //   Serial.print(receiver.getChannel1Value());
+  //   Serial.print(" ");
+  //   Serial.println(receiver.getChannel2Value());
+  // }
+
+  // if(receiver.isDiagonalDownRight()) {
+  //   Serial.print("Diagonal Down Right ");
+  //   Serial.print(receiver.getChannel1Value());
+  //   Serial.print(" ");
+  //   Serial.println(receiver.getChannel2Value());
+  // }
+
+  // if(receiver.isDown()) {
+  //   Serial.print("Down ");
+  //   Serial.print(receiver.getChannel1Value());
+  //   Serial.print(" ");
+  //   Serial.println(receiver.getChannel2Value());
+  // }
+
+  // if(receiver.isDiagonalDownLeft()) {
+  //   Serial.print("Diagonal Down Left ");
+  //   Serial.print(receiver.getChannel1Value());
+  //   Serial.print(" ");
+  //   Serial.println(receiver.getChannel2Value());
+  // }
+
+  // if(receiver.isLeft()) {
+  //   Serial.print("Left ");
+  //   Serial.print(receiver.getChannel1Value());
+  //   Serial.print(" ");
+  //   Serial.println(receiver.getChannel2Value());
+  // }
+  // if(receiver.isDiagonalUpLeft()) {
+  //   Serial.print("Diagonal Up Left ");
+  //   Serial.print(receiver.getChannel1Value());
+  //   Serial.print(" ");
+  //   Serial.println(receiver.getChannel2Value());
+  // }
+  // if(receiver.isDefault()) {
+  //   Serial.print("Default ");
+  //   Serial.print(receiver.getChannel1Value());
+  //   Serial.print(" ");
+  //   Serial.println(receiver.getChannel2Value());
+  // }
+
 }
